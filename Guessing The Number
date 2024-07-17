@@ -1,0 +1,27 @@
+/*
+Program:Guessing a number.
+Description:Computer gererates a random number and asks the players to guess it.If the player's guess is higher than the actual number,the program displays "Lower Number please" and viceversa.when Player guess it correctly.Player won the game.
+*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main(){
+    srand(time(0));
+    int randommum=(rand()%100)+1;
+    int num;
+    do{
+        printf("Guess The Number: ");
+        scanf("%d",&num);
+        if(num>randommum){
+            printf("Guess Lower number Please..!\n");
+        }
+        else if(num<randommum){
+            printf("Guess Greater Number Please..!\n");
+        }
+        else{
+            printf("Oreey...! Won the game :) \n");
+        }
+    }while(randommum!=num);
+    printf("random number is: %d",randommum);
+    return 0;
+}
